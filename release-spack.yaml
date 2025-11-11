@@ -1,0 +1,34 @@
+spack:
+  config:
+    deprecated: true
+  include:
+  # Compiler toolchain
+  - ./included_yaml/gcc-12-toolchain.yaml
+  # Packages
+  - ./included_yaml/packages-art.yaml
+  # Specs
+  - ./included_yaml/specs-art.yaml
+  specs:
+  - $specs_art
+  concretizer:
+    unify: true
+    reuse:
+      from:
+      - type: local
+      - type: external
+  # For deploying software, there is no need to create a view.  This means that
+  # the activated environment will not automatically provide the (e.g.) art executable.
+  view: false
+  packages:
+    all:
+      providers:
+        libc:
+        - glibc
+        'zlib-api:':
+        - zlib
+      variants:
+      - generator=ninja
+      - build_type=Release
+      - cxxstd=17
+      target:
+      - x86_64_v3
