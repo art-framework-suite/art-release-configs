@@ -1,0 +1,8 @@
+toolchains:
+  build_compiler:
+  - spec: "%c=gcc@13"
+    when: "%c"
+  - spec: "%cxx=gcc@13"
+    when: "%cxx"
+  - spec: "%fortran=gcc@13"
+    when: "%fortran"

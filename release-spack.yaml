@@ -3,7 +3,7 @@ spack:
     deprecated: true
   include:
   # Compiler toolchain
-  - ./included_yaml/gcc-12-toolchain.yaml
+  - ./included_yaml/gcc-13-toolchain.yaml
   # Packages
   - ./included_yaml/packages-art.yaml
   # Specs
